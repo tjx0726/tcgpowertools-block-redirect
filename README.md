@@ -1,0 +1,1 @@
+# tcgpowertools-block-redirect
