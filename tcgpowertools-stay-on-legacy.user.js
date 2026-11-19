@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         TCG PowerTools - Stay on Legacy App
 // @namespace    local.tcgpowertools
-// @version      1.0.1
+// @version      1.0.2
 // @description  Prevent the legacy app from redirecting this tab to the new app's login redirect.
 // @match        https://app.tcgpowertools.com/*
 // @run-at       document-start
 // @grant        none
 // @sandbox      raw
 // @noframes
-// @homepageURL  https://github.com/tjx0726/tcgpowertools-block-redirect
-// @updateURL    https://raw.githubusercontent.com/tjx0726/tcgpowertools-block-redirect/main/tcgpowertools-stay-on-legacy.user.js
-// @downloadURL  https://raw.githubusercontent.com/tjx0726/tcgpowertools-block-redirect/main/tcgpowertools-stay-on-legacy.user.js
+// @homepageURL  https://github.com/tjx0726/P9_Tampermonkey/tree/main/tcgpowertools-block-redirect
+// @updateURL    https://raw.githubusercontent.com/tjx0726/P9_Tampermonkey/main/tcgpowertools-block-redirect/tcgpowertools-stay-on-legacy.user.js
+// @downloadURL  https://raw.githubusercontent.com/tjx0726/P9_Tampermonkey/main/tcgpowertools-block-redirect/tcgpowertools-stay-on-legacy.user.js
 // ==/UserScript==
 
 (() => {

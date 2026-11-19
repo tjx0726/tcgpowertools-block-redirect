@@ -1,6 +1,12 @@
 # TCG PowerTools: stay on the legacy app
 
-**[Install or update the userscript](https://raw.githubusercontent.com/tjx0726/tcgpowertools-block-redirect/main/tcgpowertools-stay-on-legacy.user.js)**
+**This script is now maintained in [P9_Tampermonkey](https://github.com/tjx0726/P9_Tampermonkey/tree/main/tcgpowertools-block-redirect).**
+
+**[Install or update the userscript](https://raw.githubusercontent.com/tjx0726/P9_Tampermonkey/main/tcgpowertools-block-redirect/tcgpowertools-stay-on-legacy.user.js)**
+
+This repository retains version `1.0.2` at the original file path as an update
+entry point for existing installations. Keep that file available so browsers
+that have been offline can still migrate later.
 
 This Tampermonkey script cancels navigation from `app.tcgpowertools.com` to
 `https://new.tcgpowertools.com/login-redirect`, including the `window.location.href`
@@ -26,9 +32,28 @@ and [userscript permission instructions](https://www.tampermonkey.net/faq.php?q=
 
 ## Receive updates from GitHub
 
-The metadata points both `@updateURL` and `@downloadURL` at the raw script on this
-repository's `main` branch. Tampermonkey checks that address for a higher
-`@version` and downloads the replacement from the same address.
+Version `1.0.2` points both `@updateURL` and `@downloadURL` at the script in
+`P9_Tampermonkey` on its `main` branch. The script name and namespace remain
+unchanged, and the redirect-blocking code is unchanged from `1.0.1`.
+
+An existing `1.0.1` installation checks this repository's original raw URL,
+finds the higher version, and receives the script with the new update metadata.
+Once that update is installed, subsequent update checks use `P9_Tampermonkey`.
+See the maintainer's [update-URL migration explanation](https://github.com/Tampermonkey/tampermonkey/issues/1904).
+
+```mermaid
+flowchart TD
+    A[Existing installation checks the old URL] --> B[Version 1.0.2 supplies the new URLs]
+    B --> C[Tampermonkey installs the update]
+    C --> D[Future updates use P9_Tampermonkey]
+```
+
+This requires an installation with a working update source and script updating
+enabled. A manually pasted copy with no update source needs a one-time install
+from the link above. A locally modified script or an overridden update URL may
+also require a manual update. Publishing this migration cannot change settings
+on other computers or establish that every installed copy has updated.
+
 See the [update metadata documentation](https://www.tampermonkey.net/documentation.php?locale=en&q=update_url).
 
 In Tampermonkey's dashboard settings, enable periodic script update checks and
@@ -46,13 +71,17 @@ automatically, as described in the same changelog.
 
 ### Publish a future update
 
-1. Edit `tcgpowertools-stay-on-legacy.user.js` in this repository.
-2. Increase `@version`, for example from `1.0.1` to `1.0.2`. Preserve `@name`,
+1. Edit `tcgpowertools-block-redirect/tcgpowertools-stay-on-legacy.user.js` in
+   [P9_Tampermonkey](https://github.com/tjx0726/P9_Tampermonkey).
+2. Increase `@version`, for example from `1.0.2` to `1.0.3`. Preserve `@name`,
    `@namespace`, and the update/download URLs.
-3. Run `node --check tcgpowertools-stay-on-legacy.user.js` and verify any changed
-   runtime behavior.
-4. Commit the changes and push or merge them into `main` on GitHub. Local edits
-   and commits that have not reached `main` are not distributed to users.
+3. From that repository's root, run
+   `node --check tcgpowertools-block-redirect/tcgpowertools-stay-on-legacy.user.js`
+   and verify any changed runtime behavior.
+4. Update its README catalog and CHANGELOG, then commit the changes and push or
+   merge them into `P9_Tampermonkey/main`. Local edits and commits that have not
+   reached `main` are not distributed to users. Keep this repository's `1.0.2`
+   migration entry available; future runtime changes belong in the new repository.
 
 To share installed scripts between browsers, Tampermonkey also offers optional
 **Script Sync**. That is separate from fetching new releases from this GitHub
@@ -79,6 +108,10 @@ repository. See the [Script Sync FAQ](https://www.tampermonkey.net/faq.php?q=Q10
 To undo the redirect blocking, disable the script in Tampermonkey and reload.
 
 ## Validation
+
+Version `1.0.2` changes the version, homepage, update URL and download URL.
+Its runtime body is unchanged from `1.0.1`. The old and new repository copies
+are identical; JavaScript syntax and migration metadata were checked.
 
 Version `1.0.1` adds distribution metadata; its runtime body is unchanged from
 `1.0.0`. JavaScript syntax and metadata were checked, and the runtime body was
