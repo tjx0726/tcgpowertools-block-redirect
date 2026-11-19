@@ -1,5 +1,7 @@
 # TCG PowerTools: stay on the legacy app
 
+[English](README.md) · [简体中文](README.zh-CN.md)
+
 **This script is now maintained in [P9_Tampermonkey](https://github.com/tjx0726/P9_Tampermonkey/tree/main/tcgpowertools-block-redirect).**
 
 **[Install or update the userscript](https://raw.githubusercontent.com/tjx0726/P9_Tampermonkey/main/tcgpowertools-block-redirect/tcgpowertools-stay-on-legacy.user.js)**
