@@ -1,6 +1,6 @@
 # TCG PowerTools：停留在旧版应用
 
-[English](README.md) · [简体中文](README.zh-CN.md)
+[English](README.md) · [中文](README.zh-CN.md)
 
 **此脚本现由 [P9_Tampermonkey](https://github.com/tjx0726/P9_Tampermonkey/tree/main/tcgpowertools-block-redirect) 维护。**
 
